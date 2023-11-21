@@ -26,12 +26,19 @@ func DBSet() *mongo.client{
 		return nil
 	}
 	fmt.Println("client connected")
+	return client
 
 }
-func UserData(client *mongo.Client, collectionName string) *mongo.client {
 
+var client *mongo.client = DBSet()
+
+
+func UserData(client *mongo.Client, collectionName string) *mongo.client {
+	var collection *mongo.Collection = client.database("Ecommerce").Collection(collectionName)
+	return collection
 }
 
 func ProductData(client *mongo.Client, collectionName string) *mongo.client {
-
+	var productCollection *mongo.Collection = client.database("Ecommerce").Collection(collectionName)
+	return productCollection
 }
