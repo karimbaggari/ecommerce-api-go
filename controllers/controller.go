@@ -6,12 +6,12 @@ import (
 )
 
 func HashPassword(password string) string {
-
+	return "value"
 }
 
 
 func VerifyPassword(userPassword string, givenPassword string) (bool, string) {
-
+	
 }
 
 
